@@ -56,7 +56,7 @@ export class PostService {
       body: `%${dto.body}%`,
       title: `%${dto.title}%`,
       tag: `%${dto.tag}%`,
-      vies: dto.views || '',
+      views: dto.views || '',
     });
     const [items, total] = await qb.getManyAndCount();
     return { items, total };
