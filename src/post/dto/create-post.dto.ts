@@ -1,5 +1,18 @@
+import { IsString, IsArray, IsOptional } from 'class-validator';
+
+export interface OutputBlockData {
+  id?: string;
+  type: any;
+  data: any;
+}
 export class CreatePostDto {
+  @IsString()
   title: string;
-  body: string;
+
+  @IsArray()
+  body: OutputBlockData[];
+
+  @IsOptional()
+  @IsArray()
   tags: string;
 }
